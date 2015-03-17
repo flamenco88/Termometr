@@ -1,9 +1,11 @@
-var form = document.getElementsByTagName('form');
+var formTab = document.getElementsByTagName('form')[0];
+formTab.setAttribute('id','formularz');
+var form = document.getElementById('formularz');
 
 var wyswietlWynik = document.createElement('p');
 document.body.appendChild(wyswietlWynik);
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('keyup', function(e) {
   var celsjusz = form.celsjusz.value; // Przypisaliśmy wartość podaną przez użytkownika do zmiennej
   e.preventDefault(); // Zapobiegamy domyślnej akcji przeglądarki, czyli przeładowania strony
   celsjusToFahrenheit(celsjusz);
